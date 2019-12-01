@@ -1,10 +1,12 @@
 $( document ).ready(function() {
 
 var positionMessage = document.getElementById("positionMessage");
-
+var timeBefore = document.getElementById("timeBefore").value;
+var alarmTimeEl = document.getElementById("alarmTime");
 
 var lat;
 var lng;
+
 
 // Find Tomorrow
   moment.updateLocale('en', {
@@ -47,7 +49,11 @@ var lng;
         url: queryURL,
         method: "GET"
       }).then(function(response) {
+
+        // RESPONSE: 
         console.log(response);
+
+        // GET TIMES:
         var initialSunrise = response.results.sunrise;
         var initialAstroTwilight = response.results.astronomical_twilight_begin;
         var initialNauticalTwilight = response.results.nautical_twilight_begin;
@@ -56,19 +62,24 @@ var lng;
         var myTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
         var sunriseTimeUgly = moment(initialSunrise).tz(myTimezone);
-        
+
 
         var sunriseTime = moment(sunriseTimeUgly).format("h:mm");
 
         positionMessage.textContent= `Tomorrow the sun will rise at ${sunriseTime}`;
 
+
+
+      // Set Alarm Time
+        alarmTime = moment(sunriseTimeUgly).subtract(timeBefore, 'minutes').format("'LT'");
+        console.log(`Alarmtime is ${alarmTime}`);
+        alarmTimeEl.textContent = alarmTime;
+
+
+
         
 
       });
-      
-      
-
-
   }
 
   
