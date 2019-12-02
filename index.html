@@ -4,7 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
   <title>Morning Light</title>
+
+  <!--BOOTSTRAP-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!--LOCAL CSS-->
+  <link rel="stylesheet" href="assets/style.css">
+  
   <!--Javascript-->
     <!--jQuery-->  
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -15,17 +23,54 @@
 
 </head>
 <body>
+<!-- This is for the yellow bit at the top and the hamburger Menu -->  
+<div id="header" class="header"></div>
 
-  <p id="positionMessage"></p>
-
-  <p>TOMORROW</p>
-  <p id="alarmTime">0:00</p>
-  <p>AM IS</p>
-  <input id="timeBefore" type="number" min="0" max="120" step="5" />
-  <p>MINUTES BEFORE SUNRISE</p>
+<!-- This is for all of the content -->
+<div id="darkness" class="darkness"></div>
 
 
+  
+<div id="contentWrapper" class="contentWrapper">
 
+    <p id="sunriseTime"></p>
+    <p>SUNRISE</p>
+
+  <div id="wakeUpTimeLockup" class="wakeUpTimeLockup">
+    <p class="wakeUpTimeLockupText">TOMORROW</p>
+    <p id="alarmTime" class="alarmTime">0:00</p>
+    <p class="wakeUpTimeLockupText">AM IS</p>
+    <select id="timeBefore" onchange="report(this.value)">
+        <option value="5">5 minutes</option>
+        <option value="10">10 minutes</option>
+        <option value="15">15 minutes</option>
+        <option value="20">20 minutes</option>
+        <option value="25">25 minutes</option>
+        <option value="30">30 minutes</option>
+        <option value="35">35 minutes</option>
+        <option value="45">45 minutes</option>
+        <option value="50">50 minutes</option>
+        <option value="55">55 minutes</option>
+        <option value="60">1 hour</option>
+        <option value="65">1:05 hours</option>
+        <option value="70">1:10 hours</option>
+        <option value="75">1:15 hours</option>
+        <option value="80">1:20 hours</option>
+        <option value="85">1:25 hours</option>
+        <option value="90">1:30 hours</option>
+        <option value="95">1:35 hours</option>
+        <option value="100">1:40 hours</option>
+        <option value="105">1:45 hours</option>
+        <option value="110">1:50 hours</option>
+        <option value="115">1:55 hours</option>
+        <option value="120">2 hours</option>
+      </select>
+    
+    <!-- <input id="timeBefore" class="timeBeforeBox" type="number" min="0" max="120" step="5" /> -->
+    <p class="wakeUpTimeLockupText">BEFORE SUNRISE</p>
+  </div>
+
+</div>  
 
 
 

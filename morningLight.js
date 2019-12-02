@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
-var positionMessage = document.getElementById("positionMessage");
-var timeBefore = document.getElementById("timeBefore").value;
+var sunriseTimeEl = document.getElementById("sunriseTime");
+var timeBeforeEl = document.getElementById("timeBefore");
 var alarmTimeEl = document.getElementById("alarmTime");
 
 var lat;
@@ -66,16 +66,24 @@ var lng;
 
         var sunriseTime = moment(sunriseTimeUgly).format("h:mm");
 
-        positionMessage.textContent= `Tomorrow the sun will rise at ${sunriseTime}`;
+        sunriseTimeEl.textContent= sunriseTime;
 
 
 
       // Set Alarm Time
-        alarmTime = moment(sunriseTimeUgly).subtract(timeBefore, 'minutes').format("'LT'");
+      
+        alarmTime = moment(sunriseTimeUgly).subtract(timeBeforeEl.value, 'minutes').format("LT");
         console.log(`Alarmtime is ${alarmTime}`);
         alarmTimeEl.textContent = alarmTime;
+      
 
+        timeBeforeEl.onchange = function(){
+          var newTimeBefore = this.value;
+          console.log(newTimeBefore);
+          alarmTime = moment(sunriseTimeUgly).subtract(newTimeBefore, 'minutes').format("LT");
+          alarmTimeEl.textContent = alarmTime;
 
+        }
 
         
 

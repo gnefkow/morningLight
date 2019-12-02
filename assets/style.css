@@ -1,0 +1,71 @@
+html { 
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+} /* Sets the default size so you can use ems and rems */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: 62.5%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+} 
+
+.header{
+  top: 0;
+  width: 100%;
+  height: 13.34%;
+  background-color: #E3CA72;
+}
+
+.darkness{
+
+height: 86.66%;
+
+background: rgba(79,57,107,1);
+background: -moz-linear-gradient(top, rgba(79,57,107,1) 0%, rgba(49,35,68,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(79,57,107,1)), color-stop(100%, rgba(49,35,68,1)));
+background: -webkit-linear-gradient(top, rgba(79,57,107,1) 0%, rgba(49,35,68,1) 100%);
+background: -o-linear-gradient(top, rgba(79,57,107,1) 0%, rgba(49,35,68,1) 100%);
+background: -ms-linear-gradient(top, rgba(79,57,107,1) 0%, rgba(49,35,68,1) 100%);
+background: linear-gradient(to bottom, rgba(79,57,107,1) 0%, rgba(49,35,68,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f396b', endColorstr='#312344', GradientType=0 );
+}
+
+.contentWrapper{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  margin: 10%;
+  /* background-color: blue; */
+}
+
+.wakeUpTimeLockup{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20em;
+
+  /* background-color: orange; */
+  color: white;
+}
+
+.wakeUpTimeLockupText{
+  font-size: 1.5em;
+}
+
+.alarmTime{
+  font-size: 4em;
+}
+
+.timeBeforeBox{}
